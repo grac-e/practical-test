@@ -1,0 +1,39 @@
+body {
+    background-color: beige;
+}
+
+.border {
+    padding: 1em;
+    border: 1px solid;
+    margin: 2em;
+    border-radius: 0.3em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.border:hover {
+    transform: scale(1.05);
+}
+
+.color-button {
+    cursor: pointer;
+    background-color: #f2e8cf;
+    border: 1px solid;
+    border-radius: 3px;
+    transition: transform 0.1s ease;
+}
+
+.color-button:hover {
+    background-color: #a5a58d;
+}
+
+.color-button:active {
+    transform: scale(0.95);
+}
+
+.button {
+    background-color: #f2e8cf;
+    border: 1px solid;
+    border-radius: 3px;
+    transition: transform 0.1s ease;
+}

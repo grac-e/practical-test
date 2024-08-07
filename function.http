@@ -1,0 +1,16 @@
+GET http://localhost:3005/api/popular-car HTTP/1.1
+content-type: application/json
+
+###
+
+GET http://localhost:3005/api/cars HTTP/1.1
+content-type: application/json
+
+###
+POST http://localhost:3005/api/cars HTTP/1.1
+content-type: application/json
+
+###
+
+DELETE http://localhost:3005/api/cars/:reg_number HTTP/1.1
+content-type: application/json

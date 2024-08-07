@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most popular car</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body x-data="popularMake">
+    <h1 style="text-align: center;">Car Inventory</h1>
+    <div class="border">
+    <h3>Town codes</h3>
+    <ul>
+        <li>Paarl ('CJ')</li>
+        <li>Bellville ('CY')</li>
+        <li>Stellenbosch ('CL')</li>
+        <li>Malmesbury ('CK')</li>
+        <li>Cape Town ('CA')</li>
+        <li>Kuilsriver ('CF')</li>
+    </ul>
+</div>
+
+    <div class="border">
+        <h4><i>View cars</i></h4>
+        <button @click="fetchCars" class="color-button">View</button>
+        <ul>
+            <template x-for="car in cars" :key="car.reg_number">
+                <li x-text="car.make + ' ' + car.model + ' (' + car.color + ') ' + car.reg_number"></li>
+            </template>
+        </ul>
+    </div>
+
+    <div class="border">
+        <h4><i>Find the most popular car</i></h4>
+        <button @click="findMostPopularCar" class="color-button">Find</button>
+        <p x-text="popularMake"></p>
+    </div>
+
+    <div class="border">
+        <h4><i>Add a new entry</i></h4>
+        Color: <input type="text" x-model="newCar.color" class="button">
+        Make: <input type="text" x-model="newCar.make" class="button">
+        Model: <input type="text" x-model="newCar.model" class="button">
+        Reg-number: <input type="text" x-model="newCar.reg_number" class="button">
+        <button @click="addNewCar" class="color-button">Add entry</button>
+    </div>
+
+    <div class="border">
+        <h4><i>Delete an old entry</i></h4>
+        Reg-number: <input type="text" x-model="deleteCar.reg_number" class="button">
+        <button @click="deleteCarEntry" class="color-button">Delete entry</button>
+    </div>
+
+    <script src="./popular.js"></script>
+</body>
+
+</html>
