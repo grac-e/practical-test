@@ -24,17 +24,12 @@ app.get('/api/cars', (req, res) => {
   res.json(cars);
 });
 
-// Add a new entry
+// // Add a new entry
 app.post('/api/cars', (req, res) => {
   const newCar = req.body;
   newCar.id = cars.length ? cars[cars.length - 1].id + 1 : 1;
   cars.push(newCar);
-  res.json(newCar)({
-    color: '',
-    make: '',
-    model: '',
-    reg_number: ''
-  })
+  res.json(newCar); // Sending the newly added car back as a JSON response
 });
 
 // Delete an old entry
