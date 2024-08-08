@@ -13,20 +13,22 @@
 <body x-data="popularMake">
     <h1 style="text-align: center;">Car Inventory</h1>
     <div class="border">
-    <h3>Town codes</h3>
-    <ul>
-        <li>Paarl ('CJ')</li>
-        <li>Bellville ('CY')</li>
-        <li>Stellenbosch ('CL')</li>
-        <li>Malmesbury ('CK')</li>
-        <li>Cape Town ('CA')</li>
-        <li>Kuilsriver ('CF')</li>
-    </ul>
-</div>
+        <h3>Town codes</h3>
+        <ul>
+            <li>Paarl ('CJ')</li>
+            <li>Bellville ('CY')</li>
+            <li>Stellenbosch ('CL')</li>
+            <li>Malmesbury ('CK')</li>
+            <li>Cape Town ('CA')</li>
+            <li>Kuilsriver ('CF')</li>
+        </ul>
+    </div>
 
     <div class="border">
-        <h4><i>View cars</i></h4>
-        <button @click="fetchCars" class="color-button">View</button>
+        <h4>View cars</h4>
+        <div class="dropdown" x-data="{ open: false }" @click="open = !open">
+            <button @click="fetchCars" class="color-button">View</button>
+        </div>
         <ul>
             <template x-for="car in cars" :key="car.reg_number">
                 <li x-text="car.make + ' ' + car.model + ' (' + car.color + ') ' + car.reg_number"></li>
@@ -35,23 +37,35 @@
     </div>
 
     <div class="border">
-        <h4><i>Find the most popular car</i></h4>
+        <h4>Find the most popular car make</h4>
         <button @click="findMostPopularCar" class="color-button">Find</button>
         <p x-text="popularMake"></p>
     </div>
 
     <div class="border">
-        <h4><i>Add a new entry</i></h4>
-        Color: <input type="text" x-model="newCar.color" class="button">
-        Make: <input type="text" x-model="newCar.make" class="button">
-        Model: <input type="text" x-model="newCar.model" class="button">
-        Reg-number: <input type="text" x-model="newCar.reg_number" class="button">
+        <h4>Add a new entry</h4>
+        <div>
+            <label for="color">Color:</label>
+            <input id="color" type="text" x-model="newCar.color" class="button">
+        </div>
+        <div>
+            <label for="make">Make:</label>
+            <input id="make" type="text" x-model="newCar.make" class="button">
+        </div>
+        <div>
+            <label for="model">Model:</label>
+            <input id="model" type="text" x-model="newCar.model" class="button">
+        </div>
+        <div>
+            <label for="reg_number">Reg. No.:</label>
+            <input id="reg_number" type="text" x-model="newCar.reg_number" class="button">
+        </div>
         <button @click="addNewCar" class="color-button">Add entry</button>
     </div>
 
     <div class="border">
-        <h4><i>Delete an old entry</i></h4>
-        Reg-number: <input type="text" x-model="deleteCar.reg_number" class="button">
+        <h4>Delete an old entry</h4>
+        Reg. No.: <input type="text" x-model="deleteCar.reg_number" class="button">
         <button @click="deleteCarEntry" class="color-button">Delete entry</button>
     </div>
 

@@ -23,6 +23,9 @@ document.addEventListener("alpine:init", () => {
         axios.get(`/api/popular-car`)
           .then(response => {
             this.popularMake = response.data.mostPopularCar;
+            setTimeout(() => {
+              this.popularMake = null;
+          }, 5000);
           })
       },
   

@@ -4,7 +4,6 @@ body {
 
 .border {
     padding: 1em;
-    border: 1px solid;
     margin: 2em;
     border-radius: 0.3em;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -12,7 +11,7 @@ body {
 }
 
 .border:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .color-button {
@@ -36,4 +35,5 @@ body {
     border: 1px solid;
     border-radius: 3px;
     transition: transform 0.1s ease;
+    margin: 1em;
 }
