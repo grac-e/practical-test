@@ -1,13 +1,28 @@
 body {
     background-color: beige;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2em;
+    color: #3d405b;
+    margin-bottom: 0.5em;
+}
+
+h3, h4 {
+    margin-bottom: 0.5em;
+    color: #3d405b;
 }
 
 .border {
-    padding: 1em;
-    margin: 2em;
-    border-radius: 0.3em;
+    padding: 1.5em;
+    margin: 2em auto;
+    border-radius: 0.5em;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
+    max-width: 600px;
 }
 
 .border:hover {
@@ -17,13 +32,16 @@ body {
 .color-button {
     cursor: pointer;
     background-color: #f2e8cf;
-    border: 1px solid;
-    border-radius: 3px;
-    transition: transform 0.1s ease;
+    border: 1px solid #3d405b;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    color: #3d405b;
+    font-weight: bold;
 }
 
 .color-button:hover {
     background-color: #a5a58d;
+    color: #fff;
 }
 
 .color-button:active {
@@ -32,8 +50,53 @@ body {
 
 .button {
     background-color: #f2e8cf;
-    border: 1px solid;
+    border: 1px solid #3d405b;
     border-radius: 3px;
-    transition: transform 0.1s ease;
-    margin: 1em;
+    padding: 0.5em;
+    transition: transform 0.1s ease, background-color 0.2s ease;
+    margin: 1em 0;
+    width: calc(100% - 2em);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+}
+
+th, td {
+    padding: 0.25em;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #81b29a;
+    color: white;
+}
+
+td {
+    background-color: #f2e8cf;
+}
+
+tr:hover td {
+    background-color: #d6d1b1;
+}
+
+@media (max-width: 600px) {
+    .border {
+        padding: 1em;
+        margin: 1em;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 300px) {
+    .button, .color-button  {
+        width: calc(100% - 2em);
+        margin: 0.5em 0;
+    }
 }
