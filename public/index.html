@@ -78,14 +78,14 @@
             <input id="reg_number" type="text" x-model="newCar.reg_number" class="button">
         </div>
         <button @click="addNewCar" class="color-button">Add entry</button>
-        <div x-show="message" x-text="message" :class="{'success': messageType === 'success', 'error': messageType === 'error'}" class="message"></div>
+        <p x-text="addMessage" :class="messageType === 'success' ? 'success' : 'error'"></p>
     </div>
 
     <div class="border">
         <h4>Delete an old entry</h4>
         Reg. No.: <input type="text" x-model="deleteCar.reg_number" class="button">
         <button @click="deleteCarEntry" class="color-button">Delete entry</button>
-        <p x-show="message" :class="messageType" x-text="message"></p>
+        <p x-text="deleteMessage" :class="deleteMessageType === 'success' ? 'success' : 'error'"></p>
     </div>
 
     <script src="./popular.js"></script>
